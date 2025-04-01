@@ -23,10 +23,10 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/order-ms-*.jar /app/order-ms.jar
+COPY --from=build /app/target/payment-project-*.jar /app/payment-project.jar
 
 # Expose the port your app runs on (replace with your actual port)
 EXPOSE 8080
 
 # Command to run the application
-ENTRYPOINT ["java", "-jar", "/app/order-ms.jar"]
+ENTRYPOINT ["java", "-jar", "/app/payment-project.jar"]
