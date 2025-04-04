@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-project
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-project
+  template:
+    metadata:
+      labels:
+        app: payment-project
+    spec:
+      containers:
+      - name: payment-project
+        image: phegley/payment:latest
+        ports:
+        - containerPort: 8081
